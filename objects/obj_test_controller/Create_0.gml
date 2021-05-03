@@ -2,7 +2,8 @@
 currentType = 0;
 time = 1000;
 types = [
-	["Crossfade", tt_crossfade],
-	["Fade through black", tt_fade_colour],
-	["Bounce in", tt_slide_down],
+	["Crossfade", tt_crossfade, {}],
+	["Fade through colour", tt_fade_colour, {}],
+	["Bounce down", tt_slide_down, {}],
+	["Slide up", tt_slide_up, { fadeType: te_linear, slideType: te_back_out }],
 ];
