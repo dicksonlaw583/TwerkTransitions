@@ -40,3 +40,16 @@ function __tt_merge_options__(_defaults, _params) {
 	}
 	return _defaults;
 }
+
+///@func __tt_tween__(selector, target, time, type)
+///@param {GMTwerkSelector} selector The selector to work with
+///@param {real} target The target value
+///@param {real|int64} time The time to get there in milliseconds (real) or steps (int64)
+///@param {struct|array|script} type An animation curve struct, a 2-tuple array of an animation curve and a channel name, or a tween equation script
+///@desc Set up and return a tweening actor for the given type
+function __tt_tween__(_selector, _target, _time, _type) {
+	if (is_struct(_type) || is_array(_type)) {
+		return ChannelTween(_selector, _target, _time, _type);
+	}
+	return Tween(_selector, _target, _time, ["type", _type]);
+}

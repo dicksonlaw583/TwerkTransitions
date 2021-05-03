@@ -1,30 +1,26 @@
-///@func tt_slide_down(targetSurface, fromSurface, toSurface)
-///@param {Surface} targetSurface
-///@param {Surface} fromSurface
-///@param {Surface} toSurface
+///@func tt_slide_down()
 ///@desc Slide down
-function tt_slide_down(_targetSurface, _fromSurface, _toSurface) {
-	// Default options
-	settings = __tt_merge_options__({
-		time: 1000,
-		slideArgs: ["type", te_bounce_out]
-	}, params);
+function tt_slide_down() {
 	// Initialize
-	if (is_undefined(_targetSurface)) {
-		after = false;
-		__image_alpha = InstanceVar("image_alpha");
-		__y = InstanceVar("y");
-		Tween(__image_alpha.set(0), 1, settings.time);
-		Tween(__y.set(-surface_get_height(application_surface)), 0, settings.time, settings.slideArgs);
+	if (!ready) {
+		settings = __tt_merge_options__({
+			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
+			slideType: te_bounce_out,
+		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(0), 1, settings.time, settings.fadeType);
+		}
+		__tt_tween__(InstanceVar("y").set(-surface_get_height(application_surface)), 0, settings.time, settings.slideType);
 		Delay(settings.time, function() {
 			instance_destroy();
 		});
 	}
 	// Ongoing
 	else {
-		surface_set_target(_targetSurface);
-		draw_surface(_fromSurface, 0, 0);
-		draw_surface_ext(_toSurface, 0, y, 1, 1, 0, c_white, image_alpha);
+		surface_set_target(overlaySurface);
+		draw_surface(fromSurface, 0, 0);
+		draw_surface_ext(application_surface, 0, y, 1, 1, 0, c_white, image_alpha);
 		surface_reset_target();
 	}
 }
