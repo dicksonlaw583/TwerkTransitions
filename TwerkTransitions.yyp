@@ -27,6 +27,7 @@
     {"id":{"name":"twerk_transitions_kernels_slide","path":"scripts/twerk_transitions_kernels_slide/twerk_transitions_kernels_slide.yy",},"order":4,},
     {"id":{"name":"GMTwerk_WhenTrue","path":"scripts/GMTwerk_WhenTrue/GMTwerk_WhenTrue.yy",},"order":15,},
     {"id":{"name":"GMTwerk_Workflow","path":"scripts/GMTwerk_Workflow/GMTwerk_Workflow.yy",},"order":17,},
+    {"id":{"name":"twerk_transitions_kernels_minmax","path":"scripts/twerk_transitions_kernels_minmax/twerk_transitions_kernels_minmax.yy",},"order":5,},
     {"id":{"name":"__gmtwerk_host__","path":"objects/__gmtwerk_host__/__gmtwerk_host__.yy",},"order":0,},
     {"id":{"name":"__GMTWERK_CONFIG__","path":"scripts/__GMTWERK_CONFIG__/__GMTWERK_CONFIG__.yy",},"order":0,},
     {"id":{"name":"twerk_transitions_kernels_fade","path":"scripts/twerk_transitions_kernels_fade/twerk_transitions_kernels_fade.yy",},"order":3,},

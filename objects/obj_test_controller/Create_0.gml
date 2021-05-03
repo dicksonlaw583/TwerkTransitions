@@ -4,8 +4,9 @@ time = 1000;
 types = [
 	["Crossfade", tt_crossfade, {}],
 	["Fade through colour", tt_fade_colour, {}],
-	["Bounce down", tt_slide_down, {}],
-	["Slide up", tt_slide_up, { fadeType: te_linear, slideType: te_back_out }],
-	["Elastic right", tt_slide_right, { slideType: te_elastic_out }],
-	["Quick left", tt_slide_left, { slideType: te_quintic_out }],
+	["Slide down (bounce)", tt_slide_down, { slideType: te_bounce_out }],
+	["Slide up (back out, with fade)", tt_slide_up, { fadeType: te_linear, slideType: te_back_out }],
+	["Slide right (elastic)", tt_slide_right, { slideType: te_elastic_out }],
+	["Slide left (quick, with fade)", tt_slide_left, { fadeType: te_linear, slideType: te_quintic_out }],
+	["Minimize to centre", tt_minimize, { fadeType: te_linear }],
 ];
