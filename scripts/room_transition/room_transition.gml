@@ -1,20 +1,20 @@
-///@func room_transition(rmTarget, <kernel>, <params>)
-///@param {Room} rmTarget The room to go to
+///@func room_transition(targetedRoom, <kernel>, <params>)
+///@param {Room} targetedRoom The room to go to
 ///@param {function} <kernel> (Optional) The transition kernel to use
 ///@param {strc} <params> (Optional) Parameters to give to the transition
 ///@desc Change to the target room with transitions enabled
-function room_transition(_rmTarget) {
+function room_transition(_targetedRoom) {
 	var _kernel = (argument_count > 1) ? argument[1] : TWERK_TRANS_DEFAULT;
 	var _params = (argument_count > 2) ? argument[2] : undefined;
 	if (instance_exists(__obj_twerk_transitions__)) {
 		if (__obj_twerk_transitions__.ready) {
-			room_goto(_rmTarget);
+			room_goto(_targetedRoom);
 		} else {
-			__obj_twerk_transitions__.rmTarget = _rmTarget;
+			__obj_twerk_transitions__.targetedRoom = _targetedRoom;
 		}
 	} else {
 		with (instance_create_depth(0, 0, TWERK_TRANS_DEPTH, __obj_twerk_transitions__)) {
-			rmTarget = _rmTarget;
+			targetedRoom = _targetedRoom;
 			kernel = _kernel;
 			params = _params;
 		}
@@ -39,105 +39,4 @@ function __tt_merge_options__(_defaults, _params) {
 		}
 	}
 	return _defaults;
-}
-
-///@func tt_crossfade(targetSurface, fromSurface, toSurface)
-///@param {Surface} targetSurface
-///@param {Surface} fromSurface
-///@param {Surface} toSurface
-///@desc Simple crossfade
-function tt_crossfade(_targetSurface, _fromSurface, _toSurface) {
-	// Default options
-	settings = __tt_merge_options__({
-		time: 1000,
-	}, params);
-	// Initialize
-	if (is_undefined(_targetSurface)) {
-		__image_alpha = InstanceVar("image_alpha");
-		Tween(__image_alpha.set(0), 1, settings.time, [
-			"onDone", function() {
-				instance_destroy();
-			}
-		]);
-	}
-	// Ongoing
-	else {
-		surface_set_target(_targetSurface);
-		draw_surface(_fromSurface, 0, 0);
-		draw_surface_ext(_toSurface, 0, 0, 1, 1, 0, c_white, image_alpha);
-		surface_reset_target();
-	}
-}
-
-///@func tt_fade_colour(targetSurface, fromSurface, toSurface)
-///@param {Surface} targetSurface
-///@param {Surface} fromSurface
-///@param {Surface} toSurface
-///@desc Fade through colour
-function tt_fade_colour(_targetSurface, _fromSurface, _toSurface) {
-	// Default options
-	settings = __tt_merge_options__({
-		time: 1000,
-		colour: c_black,
-	}, params);
-	// Initialize
-	if (is_undefined(_targetSurface)) {
-		after = false;
-		__image_alpha = InstanceVar("image_alpha");
-		Workflow([
-			function() {
-				return Tween(__image_alpha.set(0), 1, settings.time/2);
-			},
-			function() {
-				after = true;
-			},
-			function() {
-				return Tween(__image_alpha.set(1), 0, settings.time/2);
-			},
-			function() {
-				instance_destroy();
-			}
-		]);
-	}
-	// Ongoing
-	else {
-		surface_set_target(_targetSurface);
-		draw_surface_ext(after ? _toSurface : _fromSurface, 0, 0, 1, 1, 0, c_white, 1);
-		draw_set_alpha(image_alpha);
-		draw_set_colour(settings.colour);
-		draw_rectangle(0, 0, surface_get_width(_targetSurface), surface_get_height(_targetSurface), false);
-		draw_set_alpha(1);
-		surface_reset_target();
-	}
-}
-
-///@func tt_slide_down(targetSurface, fromSurface, toSurface)
-///@param {Surface} targetSurface
-///@param {Surface} fromSurface
-///@param {Surface} toSurface
-///@desc Slide down
-function tt_slide_down(_targetSurface, _fromSurface, _toSurface) {
-	// Default options
-	settings = __tt_merge_options__({
-		time: 1000,
-		slideArgs: ["type", te_bounce_out]
-	}, params);
-	// Initialize
-	if (is_undefined(_targetSurface)) {
-		after = false;
-		__image_alpha = InstanceVar("image_alpha");
-		__y = InstanceVar("y");
-		Tween(__image_alpha.set(0), 1, settings.time);
-		Tween(__y.set(-surface_get_height(application_surface)), 0, settings.time, settings.slideArgs);
-		Delay(settings.time, function() {
-			instance_destroy();
-		});
-	}
-	// Ongoing
-	else {
-		surface_set_target(_targetSurface);
-		draw_surface(_fromSurface, 0, 0);
-		draw_surface_ext(_toSurface, 0, y, 1, 1, 0, c_white, image_alpha);
-		surface_reset_target();
-	}
 }

@@ -19,9 +19,9 @@ if (!surface_exists(overlaySurface)) {
 // Prepare fromSurface and toSurface
 if (!ready) {
 	surface_copy(fromSurface, 0, 0, application_surface);
-	ready = true;
 	kernel();
-	room_goto(rmTarget);
+	ready = true;
+	room_goto(targetedRoom);
 }
 
 // Generate merged surface
