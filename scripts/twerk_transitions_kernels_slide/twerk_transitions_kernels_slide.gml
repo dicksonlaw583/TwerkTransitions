@@ -109,9 +109,9 @@ function tt_slide_left() {
 ///@func tt_slide_in_vertical()
 ///@desc Slide in halves from top and bottom
 function tt_slide_in_vertical() {
-	// Initialize
 	var halfHeight = surface_get_height(application_surface) div 2;
 	var fullWidth = surface_get_width(application_surface);
+	// Initialize
 	if (!ready) {
 		settings = __tt_merge_options__({
 			time: TWERK_TRANS_DURATION,
@@ -122,7 +122,7 @@ function tt_slide_in_vertical() {
 			__tt_tween__(InstanceVar("image_alpha").set(0), 1, settings.time, settings.fadeType);
 		}
 		y1 = -halfHeight;
-		y2 = 3*halfHeight;
+		y2 = 2*halfHeight;
 		__tt_tween__(InstanceVar("y1"), 0, settings.time, settings.slideType);
 		__tt_tween__(InstanceVar("y2"), halfHeight, settings.time, settings.slideType);
 		Delay(settings.time, function() {
@@ -144,7 +144,36 @@ function tt_slide_in_vertical() {
 ///@func tt_slide_in_horizontal()
 ///@desc Slide in halves from left and right
 function tt_slide_in_horizontal() {
-
+	var fullHeight = surface_get_height(application_surface);
+	var halfWidth = surface_get_width(application_surface) div 2;
+	// Initialize
+	if (!ready) {
+		settings = __tt_merge_options__({
+			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
+			slideType: te_bounce_out,
+		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(0), 1, settings.time, settings.fadeType);
+		}
+		x1 = -halfWidth;
+		x2 = 2*halfWidth;
+		__tt_tween__(InstanceVar("x1"), 0, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("x2"), halfWidth, settings.time, settings.slideType);
+		Delay(settings.time, function() {
+			instance_destroy();
+		});
+	}
+	// Ongoing
+	else {
+		surface_set_target(overlaySurface);
+		draw_surface(fromSurface, 0, 0);
+		draw_set_alpha(image_alpha);
+		draw_surface_part(application_surface, 0, 0, halfWidth, fullHeight, x1, 0);
+		draw_surface_part(application_surface, halfWidth, 0, halfWidth, fullHeight, x2, 0);
+		draw_set_alpha(1);
+		surface_reset_target();
+	}
 }
 
 ///@func tt_slide_in_4way()

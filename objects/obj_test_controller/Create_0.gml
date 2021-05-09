@@ -11,4 +11,5 @@ types = [
 	["Minimize to centre (with fade)", tt_minimize, { fadeType: te_linear }],
 	["Maximize from centre (elastic, no fade)", tt_maximize, { fadeType: undefined, scaleType: te_elastic_out }],
 	["Slide in top and bottom (bounce)", tt_slide_in_vertical, { fadeType: undefined, slideType: te_bounce_out }],
+	["Slide in left and right (swing)", tt_slide_in_horizontal, { slideType: te_swing }],
 ];
