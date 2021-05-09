@@ -13,4 +13,5 @@ types = [
 	["Slide in top and bottom (bounce)", tt_slide_in_vertical, { fadeType: undefined, slideType: te_bounce_out }],
 	["Slide in left and right (swing)", tt_slide_in_horizontal, { slideType: te_swing }],
 	["Slide in 4-way (bounce)", tt_slide_in_4way, { slideType: te_bounce_out }],
+	["Horizontal flip (swing)", tt_flip_horizontal, {}],
 ];

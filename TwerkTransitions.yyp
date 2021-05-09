@@ -19,6 +19,7 @@
     {"id":{"name":"GMTwerk_While","path":"scripts/GMTwerk_While/GMTwerk_While.yy",},"order":16,},
     {"id":{"name":"bg_tttest_plains","path":"sprites/bg_tttest_plains/bg_tttest_plains.yy",},"order":1,},
     {"id":{"name":"rm_tttest_plains","path":"rooms/rm_tttest_plains/rm_tttest_plains.yy",},"order":4,},
+    {"id":{"name":"twerk_transitions_kernels_flip","path":"scripts/twerk_transitions_kernels_flip/twerk_transitions_kernels_flip.yy",},"order":6,},
     {"id":{"name":"fnt_tttest_text","path":"fonts/fnt_tttest_text/fnt_tttest_text.yy",},"order":7,},
     {"id":{"name":"GMTwerk_Itinerary","path":"scripts/GMTwerk_Itinerary/GMTwerk_Itinerary.yy",},"order":4,},
     {"id":{"name":"GMTwerk_twerk_waves","path":"scripts/GMTwerk_twerk_waves/GMTwerk_twerk_waves.yy",},"order":13,},
