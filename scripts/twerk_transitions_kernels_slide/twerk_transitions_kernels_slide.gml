@@ -179,4 +179,48 @@ function tt_slide_in_horizontal() {
 ///@func tt_slide_in_4way()
 ///@desc Slide in quarters from each corner
 function tt_slide_in_4way() {
+	var halfWidth = surface_get_width(application_surface) div 2;
+	var halfHeight = surface_get_height(application_surface) div 2;
+	// Initialize
+	if (!ready) {
+		settings = __tt_merge_options__({
+			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
+			slideType: te_bounce_out,
+		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(0), 1, settings.time, settings.fadeType);
+		}
+		x1 = -halfWidth;
+		y1 = -halfHeight;
+		x2 = 2*halfWidth;
+		y2 = -halfHeight;
+		x3 = -halfWidth;
+		y3 = 2*halfHeight;
+		x4 = 2*halfWidth;
+		y4 = 2*halfHeight;
+		__tt_tween__(InstanceVar("x1"), 0, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("y1"), 0, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("x2"), halfWidth, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("y2"), 0, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("x3"), 0, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("y3"), halfHeight, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("x4"), halfWidth, settings.time, settings.slideType);
+		__tt_tween__(InstanceVar("y4"), halfHeight, settings.time, settings.slideType);
+		Delay(settings.time, function() {
+			instance_destroy();
+		});
+	}
+	// Ongoing
+	else {
+		surface_set_target(overlaySurface);
+		draw_surface(fromSurface, 0, 0);
+		draw_set_alpha(image_alpha);
+		draw_surface_part(application_surface, 0, 0, halfWidth, halfHeight, x1, y1);
+		draw_surface_part(application_surface, halfWidth, 0, halfWidth, halfHeight, x2, y2);
+		draw_surface_part(application_surface, 0, halfHeight, halfWidth, halfHeight, x3, y3);
+		draw_surface_part(application_surface, halfWidth, halfHeight, halfWidth, halfHeight, x4, y4);
+		draw_set_alpha(1);
+		surface_reset_target();
+	}
 }
