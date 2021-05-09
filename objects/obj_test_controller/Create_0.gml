@@ -14,4 +14,5 @@ types = [
 	["Slide in left and right (swing)", tt_slide_in_horizontal, { slideType: te_swing }],
 	["Slide in 4-way (bounce)", tt_slide_in_4way, { slideType: te_bounce_out }],
 	["Horizontal flip (swing)", tt_flip_horizontal, {}],
+	["Vertical flip (back-in-out)", tt_flip_vertical, { spinType: te_back_inout }],
 ];
