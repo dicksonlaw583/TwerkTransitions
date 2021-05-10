@@ -6,8 +6,12 @@ function tt_push_down() {
 	if (!ready) {
 		settings = __tt_merge_options__({
 			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
 			pushType: te_bounce_out,
 		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(1), 0, settings.time, settings.fadeType);
+		}
 		__tt_tween__(InstanceVar("y").set(-_fullHeight), 0, settings.time, settings.pushType);
 		Delay(settings.time, function() {
 			instance_destroy();
@@ -16,7 +20,7 @@ function tt_push_down() {
 	// Ongoing
 	else {
 		surface_set_target(overlaySurface);
-		draw_surface(fromSurface, 0, y+_fullHeight);
+		draw_surface_ext(fromSurface, 0, y+_fullHeight, 1, 1, 0, c_white, image_alpha);
 		draw_surface(application_surface, 0, y);
 		surface_reset_target();
 	}
@@ -30,8 +34,12 @@ function tt_push_up() {
 	if (!ready) {
 		settings = __tt_merge_options__({
 			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
 			pushType: te_bounce_out,
 		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(1), 0, settings.time, settings.fadeType);
+		}
 		__tt_tween__(InstanceVar("y").set(_fullHeight), 0, settings.time, settings.pushType);
 		Delay(settings.time, function() {
 			instance_destroy();
@@ -40,7 +48,7 @@ function tt_push_up() {
 	// Ongoing
 	else {
 		surface_set_target(overlaySurface);
-		draw_surface(fromSurface, 0, y-_fullHeight);
+		draw_surface_ext(fromSurface, 0, y-_fullHeight, 1, 1, 0, c_white, image_alpha);
 		draw_surface(application_surface, 0, y);
 		surface_reset_target();
 	}
@@ -54,8 +62,12 @@ function tt_push_right() {
 	if (!ready) {
 		settings = __tt_merge_options__({
 			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
 			pushType: te_bounce_out,
 		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(1), 0, settings.time, settings.fadeType);
+		}
 		__tt_tween__(InstanceVar("x").set(-_fullWidth), 0, settings.time, settings.pushType);
 		Delay(settings.time, function() {
 			instance_destroy();
@@ -64,7 +76,7 @@ function tt_push_right() {
 	// Ongoing
 	else {
 		surface_set_target(overlaySurface);
-		draw_surface(fromSurface, x+_fullWidth, 0);
+		draw_surface_ext(fromSurface, x+_fullWidth, 0, 1, 1, 0, c_white, image_alpha);
 		draw_surface(application_surface, x, 0);
 		surface_reset_target();
 	}
@@ -78,8 +90,12 @@ function tt_push_left() {
 	if (!ready) {
 		settings = __tt_merge_options__({
 			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
 			pushType: te_bounce_out,
 		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(1), 0, settings.time, settings.fadeType);
+		}
 		__tt_tween__(InstanceVar("x").set(_fullWidth), 0, settings.time, settings.pushType);
 		Delay(settings.time, function() {
 			instance_destroy();
@@ -88,7 +104,7 @@ function tt_push_left() {
 	// Ongoing
 	else {
 		surface_set_target(overlaySurface);
-		draw_surface(fromSurface, x-_fullWidth, 0);
+		draw_surface_ext(fromSurface, x-_fullWidth, 0, 1, 1, 0, c_white, image_alpha);
 		draw_surface(application_surface, x, 0);
 		surface_reset_target();
 	}

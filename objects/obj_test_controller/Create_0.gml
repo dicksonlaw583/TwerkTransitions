@@ -19,7 +19,7 @@ types = [
 	["Slide out left and right (swing)", tt_slide_out_horizontal, { slideType: te_swing }],
 	["Slide out 4-way (bounce)", tt_slide_out_4way, { slideType: te_bounce_out }],
 	["Push down (bounce)", tt_push_down, { pushType: te_bounce_out }],
-	["Push up (back out)", tt_push_up, { pushType: te_back_out }],
+	["Push up (back out, with fade)", tt_push_up, { fadeType: te_linear, pushType: te_back_out }],
 	["Push right (elastic)", tt_push_right, { pushType: te_elastic_out }],
-	["Push left (quick)", tt_push_left, { pushType: te_quintic_out }],
+	["Push left (quick, with fade)", tt_push_left, { fadeType: te_linear, pushType: te_quintic_out }],
 ];
