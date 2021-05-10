@@ -14,6 +14,7 @@
     {"id":{"name":"obj_tttest_bouncer","path":"objects/obj_tttest_bouncer/obj_tttest_bouncer.yy",},"order":5,},
     {"id":{"name":"GMTwerk_Track","path":"scripts/GMTwerk_Track/GMTwerk_Track.yy",},"order":8,},
     {"id":{"name":"GMTwerk_ForEach","path":"scripts/GMTwerk_ForEach/GMTwerk_ForEach.yy",},"order":3,},
+    {"id":{"name":"twerk_transitions_kernels_push","path":"scripts/twerk_transitions_kernels_push/twerk_transitions_kernels_push.yy",},"order":7,},
     {"id":{"name":"GMTwerk_selectors","path":"scripts/GMTwerk_selectors/GMTwerk_selectors.yy",},"order":7,},
     {"id":{"name":"GMTwerk_tween_blends","path":"scripts/GMTwerk_tween_blends/GMTwerk_tween_blends.yy",},"order":10,},
     {"id":{"name":"GMTwerk_While","path":"scripts/GMTwerk_While/GMTwerk_While.yy",},"order":16,},
