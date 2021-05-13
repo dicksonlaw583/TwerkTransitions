@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"__obj_twerk_transitions__","path":"objects/__obj_twerk_transitions__/__obj_twerk_transitions__.yy",},"order":0,},
+    {"id":{"name":"twerk_transitions_kernels_wipe","path":"scripts/twerk_transitions_kernels_wipe/twerk_transitions_kernels_wipe.yy",},"order":8,},
     {"id":{"name":"spr_tttest_bouncer","path":"sprites/spr_tttest_bouncer/spr_tttest_bouncer.yy",},"order":6,},
     {"id":{"name":"GMTwerk_WhenToggle","path":"scripts/GMTwerk_WhenToggle/GMTwerk_WhenToggle.yy",},"order":14,},
     {"id":{"name":"GMTwerk_Delay","path":"scripts/GMTwerk_Delay/GMTwerk_Delay.yy",},"order":2,},

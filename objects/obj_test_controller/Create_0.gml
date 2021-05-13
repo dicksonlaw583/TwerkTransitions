@@ -22,4 +22,8 @@ types = [
 	["Push up (back out, with fade)", tt_push_up, { fadeType: te_linear, pushType: te_back_out }],
 	["Push right (elastic)", tt_push_right, { pushType: te_elastic_out }],
 	["Push left (quick, with fade)", tt_push_left, { fadeType: te_linear, pushType: te_quintic_out }],
+	["Wipe down (swing, with fade)", tt_wipe_down, { fadeType: te_linear, wipeType: te_swing }],
+	["Wipe up (swing)", tt_wipe_up, { wipeType: te_swing }],
+	["Wipe right (swing, with fade)", tt_wipe_right, { fadeType: te_linear, wipeType: te_swing }],
+	["Wipe left (swing)", tt_wipe_left, { wipeType: te_swing }],
 ];
