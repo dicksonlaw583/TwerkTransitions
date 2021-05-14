@@ -29,4 +29,7 @@ types = [
 	["Wipe vertical 2-way (quick)", tt_wipe_vertical, { wipeType: te_quintic_out }],
 	["Wipe horizontal 2-way (quick, with fade)", tt_wipe_horizontal, { fadeType: te_linear, wipeType: te_quintic_out }],
 	["Wipe 4-way (quick)", tt_wipe_4way, { wipeType: te_quintic_out }],
+	["Wipe out vertical 2-way (quick)", tt_wipe_out_vertical, { wipeType: te_quintic_out }],
+	["Wipe out horizontal 2-way (quick, with fade)", tt_wipe_out_horizontal, { fadeType: te_linear, wipeType: te_quintic_out }],
+	["Wipe out 4-way (quick)", tt_wipe_out_4way, { wipeType: te_quintic_out }],
 ];
