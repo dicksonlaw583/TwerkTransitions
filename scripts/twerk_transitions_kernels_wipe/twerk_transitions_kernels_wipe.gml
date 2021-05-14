@@ -176,3 +176,54 @@ function tt_wipe_horizontal() {
 		surface_reset_target();
 	}
 }
+
+///@func tt_wipe_4way()
+///@desc Wipe from the corners towards middle
+function tt_wipe_4way() {
+	var fullWidth = surface_get_width(application_surface);
+	var fullHeight = surface_get_height(application_surface);
+	var halfWidth = fullWidth div 2;
+	var halfHeight = fullHeight div 2;
+	// Initialize
+	if (!ready) {
+		settings = __tt_merge_options__({
+			time: TWERK_TRANS_DURATION,
+			fadeType: undefined,
+			wipeType: te_bounce_out,
+		}, params);
+		if (!is_undefined(settings.fadeType)) {
+			__tt_tween__(InstanceVar("image_alpha").set(0), 1, settings.time, settings.fadeType);
+		}
+		x1 = 0;
+		y1 = 0;
+		x2 = fullWidth;
+		y2 = 0;
+		x3 = 0;
+		y3 = fullHeight;
+		x4 = fullWidth;
+		y4 = fullHeight;
+		__tt_tween__(InstanceVar("x1"), halfWidth, settings.time, settings.wipeType);
+		__tt_tween__(InstanceVar("y1"), halfHeight, settings.time, settings.wipeType);
+		__tt_tween__(InstanceVar("x2"), halfWidth, settings.time, settings.wipeType);
+		__tt_tween__(InstanceVar("y2"), halfHeight, settings.time, settings.wipeType);
+		__tt_tween__(InstanceVar("x3"), halfWidth, settings.time, settings.wipeType);
+		__tt_tween__(InstanceVar("y3"), halfHeight, settings.time, settings.wipeType);
+		__tt_tween__(InstanceVar("x4"), halfWidth, settings.time, settings.wipeType);
+		__tt_tween__(InstanceVar("y4"), halfHeight, settings.time, settings.wipeType);
+		Delay(settings.time, function() {
+			instance_destroy();
+		});
+	}
+	// Ongoing
+	else {
+		surface_set_target(overlaySurface);
+		draw_surface(fromSurface, 0, 0);
+		draw_set_alpha(image_alpha);
+		draw_surface_part(application_surface, 0, 0, x1, y1, 0, 0);
+		draw_surface_part(application_surface, x2, 0, fullWidth-x2, y2, x2, 0);
+		draw_surface_part(application_surface, 0, y3, x3, fullHeight-y3, 0, y3);
+		draw_surface_part(application_surface, x4, y4, fullWidth-x4, fullHeight-y4, x4, y4);
+		draw_set_alpha(1);
+		surface_reset_target();
+	}
+}
