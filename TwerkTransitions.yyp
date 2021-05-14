@@ -19,8 +19,7 @@
     {"id":{"name":"GMTwerk_selectors","path":"scripts/GMTwerk_selectors/GMTwerk_selectors.yy",},"order":7,},
     {"id":{"name":"GMTwerk_tween_blends","path":"scripts/GMTwerk_tween_blends/GMTwerk_tween_blends.yy",},"order":10,},
     {"id":{"name":"GMTwerk_While","path":"scripts/GMTwerk_While/GMTwerk_While.yy",},"order":16,},
-    {"id":{"name":"bg_tttest_plains","path":"sprites/bg_tttest_plains/bg_tttest_plains.yy",},"order":1,},
-    {"id":{"name":"rm_tttest_plains","path":"rooms/rm_tttest_plains/rm_tttest_plains.yy",},"order":4,},
+    {"id":{"name":"rm_tttest_red","path":"rooms/rm_tttest_red/rm_tttest_red.yy",},"order":4,},
     {"id":{"name":"twerk_transitions_kernels_flip","path":"scripts/twerk_transitions_kernels_flip/twerk_transitions_kernels_flip.yy",},"order":6,},
     {"id":{"name":"fnt_tttest_text","path":"fonts/fnt_tttest_text/fnt_tttest_text.yy",},"order":7,},
     {"id":{"name":"GMTwerk_Itinerary","path":"scripts/GMTwerk_Itinerary/GMTwerk_Itinerary.yy",},"order":4,},
@@ -34,8 +33,7 @@
     {"id":{"name":"__gmtwerk_host__","path":"objects/__gmtwerk_host__/__gmtwerk_host__.yy",},"order":0,},
     {"id":{"name":"__GMTWERK_CONFIG__","path":"scripts/__GMTWERK_CONFIG__/__GMTWERK_CONFIG__.yy",},"order":0,},
     {"id":{"name":"twerk_transitions_kernels_fade","path":"scripts/twerk_transitions_kernels_fade/twerk_transitions_kernels_fade.yy",},"order":3,},
-    {"id":{"name":"bg_tttest_island","path":"sprites/bg_tttest_island/bg_tttest_island.yy",},"order":0,},
-    {"id":{"name":"rm_tttest_island","path":"rooms/rm_tttest_island/rm_tttest_island.yy",},"order":3,},
+    {"id":{"name":"rm_tttest_blue","path":"rooms/rm_tttest_blue/rm_tttest_blue.yy",},"order":3,},
   ],
   "Options": [
     {"name":"HTML5","path":"options/html5/options_html5.yy",},
@@ -57,8 +55,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_tttest_island","path":"rooms/rm_tttest_island/rm_tttest_island.yy",},},
-    {"roomId":{"name":"rm_tttest_plains","path":"rooms/rm_tttest_plains/rm_tttest_plains.yy",},},
+    {"roomId":{"name":"rm_tttest_blue","path":"rooms/rm_tttest_blue/rm_tttest_blue.yy",},},
+    {"roomId":{"name":"rm_tttest_red","path":"rooms/rm_tttest_red/rm_tttest_red.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Libraries/TwerkTransitions.yy","order":0,"resourceVersion":"1.0","name":"TwerkTransitions","tags":[],"resourceType":"GMFolder",},
