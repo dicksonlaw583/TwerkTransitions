@@ -7,6 +7,7 @@ Default depth of the transition daemon.
 Default transition type.
 */
 #macro TWERK_TRANS_DEFAULT tt_crossfade
+#macro TWERK_TRANS_OPTIONS undefined
 
 /**
 Default transition duration

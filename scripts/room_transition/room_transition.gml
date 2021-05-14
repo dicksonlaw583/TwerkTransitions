@@ -5,7 +5,7 @@
 ///@desc Change to the target room with transitions enabled
 function room_transition(_targetedRoom) {
 	var _kernel = (argument_count > 1) ? argument[1] : TWERK_TRANS_DEFAULT;
-	var _params = (argument_count > 2) ? argument[2] : undefined;
+	var _params = (argument_count > 2) ? argument[2] : TWERK_TRANS_OPTIONS;
 	if (instance_exists(__obj_twerk_transitions__)) {
 		if (__obj_twerk_transitions__.ready) {
 			room_goto(_targetedRoom);
