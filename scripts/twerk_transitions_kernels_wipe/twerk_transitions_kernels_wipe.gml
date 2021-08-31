@@ -107,9 +107,9 @@ function tt_wipe_left() {
 }
 
 
-///@func tt_wipe_vertical()
+///@func tt_wipe_in_vertical()
 ///@desc Wipe from up and down towards middle
-function tt_wipe_vertical() {
+function tt_wipe_in_vertical() {
 	var halfHeight = surface_get_height(application_surface) div 2;
 	var fullWidth = surface_get_width(application_surface);
 	// Initialize
@@ -142,9 +142,9 @@ function tt_wipe_vertical() {
 	}
 }
 
-///@func tt_wipe_horizontal()
+///@func tt_wipe_in_horizontal()
 ///@desc Wipe from left and right towards middle
-function tt_wipe_horizontal() {
+function tt_wipe_in_horizontal() {
 	var fullHeight = surface_get_height(application_surface);
 	var halfWidth = surface_get_width(application_surface) div 2;
 	// Initialize
@@ -177,9 +177,9 @@ function tt_wipe_horizontal() {
 	}
 }
 
-///@func tt_wipe_4way()
+///@func tt_wipe_in_4way()
 ///@desc Wipe from the corners towards middle
-function tt_wipe_4way() {
+function tt_wipe_in_4way() {
 	var fullWidth = surface_get_width(application_surface);
 	var fullHeight = surface_get_height(application_surface);
 	var halfWidth = fullWidth div 2;
