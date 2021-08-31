@@ -33,20 +33,17 @@ function tt_fade_colour() {
 			colour: c_black,
 		}, params);
 		after = false;
-		Workflow([
-			function() {
-				return __tt_tween__(InstanceVar("image_alpha").set(0), 1, settings.time/2, settings.fadeOutType);
-			},
-			function() {
-				after = true;
-			},
-			function() {
-				return __tt_tween__(InstanceVar("image_alpha").set(1), 0, settings.time/2, settings.fadeInType);
-			},
-			function() {
-				instance_destroy();
-			}
-		]);
+		halftime = is_int64(settings.time) ? int64(floor(settings.time/2)) : settings.time/2;
+		DubstepTwerk(InstanceVar("image_alpha").set(0), 1, 1, settings.time,
+			"forward", settings.fadeOutType,
+			"backward", settings.fadeInType,
+		);
+		Delay(halftime, function() {
+			after = true;
+		});
+		Delay(settings.time, function() {
+			instance_destroy();
+		});
 	}
 	// Ongoing
 	else {
