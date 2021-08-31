@@ -189,7 +189,7 @@ function tt_wipe_4way() {
 		settings = __tt_merge_options__({
 			time: TWERK_TRANS_DURATION,
 			fadeType: undefined,
-			wipeType: te_bounce_out,
+			wipeType: te_swing,
 		}, params);
 		if (!is_undefined(settings.fadeType)) {
 			__tt_tween__(InstanceVar("image_alpha").set(0), 1, settings.time, settings.fadeType);
@@ -309,7 +309,7 @@ function tt_wipe_out_4way() {
 		settings = __tt_merge_options__({
 			time: TWERK_TRANS_DURATION,
 			fadeType: undefined,
-			wipeType: te_bounce_out,
+			wipeType: te_swing,
 		}, params);
 		if (!is_undefined(settings.fadeType)) {
 			__tt_tween__(InstanceVar("image_alpha").set(1), 0, settings.time, settings.fadeType);
