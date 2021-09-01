@@ -13,6 +13,7 @@
     {"id":{"name":"__gmtwerk_host__","path":"objects/__gmtwerk_host__/__gmtwerk_host__.yy",},"order":0,},
     {"id":{"name":"obj_test_controller","path":"objects/obj_test_controller/obj_test_controller.yy",},"order":2,},
     {"id":{"name":"obj_tttest_bouncer","path":"objects/obj_tttest_bouncer/obj_tttest_bouncer.yy",},"order":5,},
+    {"id":{"name":"twerk_transitions_dependencies","path":"scripts/twerk_transitions_dependencies/twerk_transitions_dependencies.yy",},"order":9,},
     {"id":{"name":"GMTwerk_WhenToggle","path":"scripts/GMTwerk_WhenToggle/GMTwerk_WhenToggle.yy",},"order":14,},
     {"id":{"name":"GMTwerk_Repeat","path":"scripts/GMTwerk_Repeat/GMTwerk_Repeat.yy",},"order":6,},
     {"id":{"name":"GMTwerk_Itinerary","path":"scripts/GMTwerk_Itinerary/GMTwerk_Itinerary.yy",},"order":4,},
