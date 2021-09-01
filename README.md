@@ -1,4 +1,4 @@
-# TwerkTransitions (Alpha)
+# TwerkTransitions
 
 ## Overview
 
