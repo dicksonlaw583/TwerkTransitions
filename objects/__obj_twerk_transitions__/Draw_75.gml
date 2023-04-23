@@ -19,7 +19,9 @@ if (!surface_exists(overlaySurface)) {
 // Prepare fromSurface and toSurface
 if (!ready) {
 	surface_copy(fromSurface, 0, 0, application_surface);
+	///Feather disable GM2016
 	kernel();
+	///Feather enable GM2016
 	ready = true;
 	room_goto(targetedRoom);
 }
@@ -30,6 +32,6 @@ draw_clear_alpha(c_black, 1);
 surface_reset_target();
 var colourWrite = gpu_get_colorwriteenable();
 gpu_set_colorwriteenable(true, true, true, false);
-kernel(overlaySurface, fromSurface, application_surface);
+kernel();
 gpu_set_colorwriteenable(colourWrite);
 draw_surface(overlaySurface, 0, 0);
