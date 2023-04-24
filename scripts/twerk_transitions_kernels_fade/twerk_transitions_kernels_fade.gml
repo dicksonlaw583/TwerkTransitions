@@ -34,10 +34,10 @@ function tt_fade_colour() {
 		}, params);
 		after = false;
 		halftime = is_int64(settings.time) ? int64(floor(settings.time/2)) : settings.time/2;
-		DubstepTwerk(InstanceVar("image_alpha").set(0), 1, 1, settings.time,
+		DubstepTwerk(InstanceVar("image_alpha").set(0), 1, 1, settings.time, [
 			"forward", settings.fadeOutType,
 			"backward", settings.fadeInType,
-		);
+		]);
 		Delay(halftime, function() {
 			after = true;
 		});

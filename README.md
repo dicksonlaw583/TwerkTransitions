@@ -1,13 +1,13 @@
-# TwerkTransitions
+# Twerk Transitions
 
 ## Overview
 
-TwerkTransitions is an open-source, free-to-use room transition library that uses [GMTwerk 2](https://github.com/dicksonlaw583/GMTwerk2) to animate its motions and fades.
+Twerk Transitions is an open-source, free-to-use room transition library that uses [GMTwerk 2](https://github.com/dicksonlaw583/GMTwerk2) to animate its motions and fades.
 
 ## Requirements
 
-- GameMaker Studio 2.3.1+
-- [GMTwerk 2.0.2](https://github.com/dicksonlaw583/GMTwerk2/releases/tag/v2.0.2) or higher
+- GameMaker Studio 2.3.7+
+- [GMTwerk 2.1.0](https://github.com/dicksonlaw583/GMTwerk2/releases/tag/v2.1.0) or higher
 
 ## Installation
 

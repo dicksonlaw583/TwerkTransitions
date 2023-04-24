@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "GMTwerk_Track",
+  "name": "GMTwerk_QueueValue",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
